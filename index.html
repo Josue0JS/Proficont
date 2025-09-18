@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Proficont - Empresa Contable</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <!-- 🔹 Navbar -->
+  <header class="hidden fade-down">
+    <nav class="navbar">
+      <div class="logo"><a href="#inicio"><img src="./assets/Logo.png" alt="Logo"></a></div>
+      <ul class="nav-links">
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#servicios">Servicios</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+<main>
+  <!-- 🔹 Inicio -->
+   <section class="inicio hidden fade-up" id="inicio">
+    <div class="inicio-content">
+      <h1>Soluciones Contables para tu Negocio</h1>
+      <p>Asesoría integral en contabilidad, impuestos y nómina.</p>
+      <a href="#contacto" class="btn-contacto">Contáctanos</a>
+    </div>
+   </section>
+
+  <!-- 🔹 Servicios -->
+  <section class="servicios hidden fade-up" id="servicios">
+    <h2>Servicios Básicos</h2>
+    <div class="cards-container">
+      
+      <!-- Card 1 -->
+      <div class="card hidden fade-left">
+        <div class="card-inner">
+          <div class="card-front" style="background-image: url('./assets/card1.jpg');">
+            <h3>Contabilidad General</h3>
+          </div>
+          <div class="card-back">
+            <p>Gestión completa de libros contables y estados financieros.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="card hidden fade-up">
+        <div class="card-inner">
+          <div class="card-front" style="background-image: url('./assets/card2.jpg');">
+            <h3>Asesoría Tributaria</h3>
+          </div>
+          <div class="card-back">
+            <p>Optimización fiscal y cumplimiento tributario.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="card hidden fade-right">
+        <div class="card-inner">
+          <div class="card-front" style="background-image: url('./assets/card3.jpg');">
+            <h3>Nómina</h3>
+          </div>
+          <div class="card-back">
+            <p>Administración de sueldos, prestaciones y seguridad social.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <button class="btn-servicios hidden fade-up">Ver más servicios ➝</button>
+  </section>
+
+  <!-- 🔹 Fundadores -->
+  <section class="fundadores hidden fade-up">
+    <h2>Nuestros Fundadores</h2>
+    <div class="fundadores-grid">
+      <div class="cardPersona hidden fade-left">
+        <img src="./assets/persona1.png" alt="Frank Lopez">
+        <h3>Frank Lopez</h3>
+        <p>Contador Público y Co-Fundador</p>
+      </div>
+      <div class="cardPersona hidden fade-right">
+        <img src="./assets/persona2.png" alt="Jasson Tamayo">
+        <h3>Jasson Tamayo</h3>
+        <p>Contador Público y Co-Fundador</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 🔹 Contacto -->
+  <section class="contacto hidden fade-up" id="contacto">
+    <div class="contacto-container">
+      <div class="formulario hidden fade-left">
+        <h2>Contáctanos</h2>
+        <form>
+          <input type="text" placeholder="Nombre y Apellido" required>
+          <input type="tel" placeholder="Número de Teléfono" required>
+          <input type="email" placeholder="Correo Electrónico" required>
+          <textarea placeholder="Mensaje a enviar" required></textarea>
+          <button type="submit">Enviar</button>
+        </form>
+      </div>
+      <div class="imagen-contacto hidden fade-right">
+        <img src="./assets/office-scene-close-up.jpg" alt="Contabilidad">
+      </div>
+    </div>
+  </section>
+</main>
+
+  <footer class="hidden fade-up">
+    <p>© 2025 Proficont. Todos los derechos reservados.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,400 @@
+/* 👇 Sección para animación con scroll */
+.hidden {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+
+:root {
+  --fuente-playfair: "Playfair Display", serif;
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  color: #333;
+  background: white;
+  line-height: 1.6;
+}
+
+/* 🔹 Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 5px 5px;
+  background: #ffffff;
+  position: sticky;
+  font-family: var(--fuente-playfair);
+}
+
+.navbar .logo img {
+  height: 90%;
+  width: 130px;
+  margin-right: 500px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  color: rgb(0, 17, 172);
+  font-weight: 450;
+  transition: 0.5s;
+}
+
+.nav-links a:hover {
+  color: #000000;
+  text-decoration:underline;
+}
+
+/* inicio */
+.inicio { 
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), url(./assets/office-scene-close-up.jpg) no-repeat center center/cover;
+  height: 200%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 110px 20px;
+  gap: 20px;
+  font-family: var(--fuente-playfair);
+}
+.inicio h1 {
+  font-size: 3em;
+  margin-top: 60px;
+  margin-bottom: 50px;
+  color: #ffffff;
+  font-family: var(--fuente-playfair);
+  font-display: swap;
+  font-weight: bold;
+}
+.inicio p {
+  font-size: 1.4em;
+  color: #ffffff;
+  max-width: 1000px;
+  font-family: 'Times New Roman', Times, serif;
+  font-display: swap;
+}
+
+.btn-contacto {
+  display: inline-block;
+  margin-top: 50px;
+  padding: 10px 10px;
+  background: #0d2538;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: 0.2s;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.btn-contacto:hover {
+  background: #f7bc0a;
+  color: #0d2538;
+}
+
+
+/* 🔹 Servicios */
+/* Sección */
+.servicios {
+  text-align: center;
+  padding: 40px 20px;
+  background: #ffffff;
+  color: #000000;
+}
+
+.servicios h2 {
+  font-size: 1.4rem;
+  font-family: var(--fuente-playfair);
+  background-color: #cfcdcd;
+  color: #323133;
+  width: 30%;
+  height: auto;
+  margin: auto;
+  border-radius: 0px 90px 0px 90px;
+  padding: 3px;
+  margin-top: 3%;
+  margin-bottom: 26px;
+  transition: 0.5s all;
+}
+
+.servicios h2:hover {
+  background-color: #000000;
+  color: antiquewhite;
+  transition: 0.5s all;
+}
+
+/* Contenedor de cards */
+.cards-container {
+  margin-top: 10%;
+  display: flex;
+  justify-content: center;
+  gap: 90px;
+  flex-wrap: wrap;
+}
+
+/* Card */
+.card {
+  width: 320px;
+  height: 350px;
+  perspective: 1000px;
+  cursor: pointer;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+/* Giro con hover */
+.card:hover .card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Frente */
+.card-front {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 12px;
+  box-shadow: 0 8px 15px rgba(0,0,0,0.4);
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.card-front::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.35);
+  border-radius: 12px;
+}
+
+.card-front h3 {
+  position: relative;
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.8);
+  z-index: 1;
+}
+
+/* Reverso */
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  background: #fffdfd;
+  border-radius: 12px;
+  box-shadow: 0 8px 15px rgba(0,0,0,0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  transform: rotateY(180deg);
+  font-size: 0.95rem;
+  color: #000;
+  line-height: 1.4;
+}
+
+
+/* Botón */
+.btn-servicios {
+  margin-top: 15%;
+  padding: 10px 20px;
+  background: #002244;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.btn-servicios:hover {
+  background: #004080;
+}
+
+.btn-ver-mas {
+  display: inline-block;
+  margin-top: 11px;
+  padding: 10px 20px;
+  background: #0d2538;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: 0.3s;
+  margin-top: 20%;
+}
+
+.btn-ver-mas:hover {
+  background: #ffc107;
+  color: #0d2538;
+}
+
+/* 🔹 Fundadores */
+.fundadores {
+  text-align: center;
+  padding: 60px 20px;
+  background: #14565860;
+}
+
+.fundadores h2 {
+  font-size: 2em;
+  margin-bottom: 30px;
+  color: #0d2538;
+}
+
+.fundadores-grid {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.cardPersona {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  width: 250px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+
+.cardPersona:hover {
+  transform: scale(1.05);
+}
+
+.cardPersona img {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 15px;
+}
+
+/* 🔹 Contacto */
+.contacto-container {
+  display: flex;
+  min-height: 400px;
+}
+
+.formulario, .imagen-contacto {
+  flex: 1;
+  padding: 40px;
+}
+
+.formulario h2 {
+  margin-bottom: 20px;
+  text-align: center;
+  color: #0d2538;
+}
+
+.formulario p {
+  text-align: center;
+  color: #0d2538;
+  font-size: 1.1rem;
+  margin-top: -15px;
+}
+
+form {
+  margin-top: 5%;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+input, textarea {
+  padding: 12px;
+  height: 45px;
+  width: 85%;
+  border: 1px solid #000000;
+  border-radius: 8px;
+}
+
+button {
+  padding: 15px;
+  background: #020202;
+  color: white;
+  border: none;
+  width: 22%;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #ffc107;
+  color: #0d2538;
+}
+
+.imagen-contacto img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+/* 🔹 Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #14565860;
+  color: rgb(10, 10, 10);
+  font-weight: bold;
+}
+
+/* Estado oculto inicial */
+.hidden {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s ease-out;
+}
+
+/* Variantes según dirección */
+.fade-up {
+  transform: translateY(40px);
+}
+.fade-left {
+  transform: translateX(-40px);
+}
+.fade-right {
+  transform: translateX(40px);
+}
+
+/* Cuando aparece */
+.show {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
